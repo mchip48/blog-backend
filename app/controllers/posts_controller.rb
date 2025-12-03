@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
   # callback
-  before_action :authenticate_user
+  before_action :authenticate_user, except: [:index]
   # after_action is available too
   def index
     posts = Post.all.order(:id)
     render json: posts
+    pp current_user
   end
 
   def create
