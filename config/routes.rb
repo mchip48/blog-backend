@@ -20,4 +20,8 @@ Rails.application.routes.draw do
 
   #users routes
   post "/users" => "users#create"
+
+  #sessions routes
+  post "/sessions" => "sessions#create"
+  delete "/sessions" => "sessions#destroy"
 end
