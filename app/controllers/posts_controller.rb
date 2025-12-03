@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  # callback
+  before_action :authenticate_user
+  # after_action is available too
   def index
     posts = Post.all.order(:id)
     render json: posts
