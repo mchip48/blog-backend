@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     posts = Post.all.order(:id)
     render json: posts
-    pp current_user
+    # pp current_user
   end
 
   def create
