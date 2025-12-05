@@ -18,7 +18,7 @@ test "index" do
 
   test "create" do
     assert_difference "Post.count", 1 do
-      post "/users.json", params: { name: "Test", email: "test@email.com", password: "password", password_confirmation: "password" }
+      post "/users.json", params: { name: "Test", email: "test@email.com", password: "password", password_confirmation: "password", admin: true }
       post "/sessions.json", params: { email: "test@email.com", password: "password" }
       post "/posts.json", params: { title: "test", body: "test post", image: "image.jpg" }
       data = JSON.parse(response.body)
