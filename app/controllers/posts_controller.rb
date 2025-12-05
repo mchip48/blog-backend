@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   # callback
-  before_action :authenticate_user, except: [:index]
+  before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_admin, only: [:update, :destroy]
+  #anyone can see the data - index and show
+  #only logged in users can create data
+  #only admins can update or destroy
+
   # after_action is available too
   def index
     posts = Post.all.order(:id)
@@ -9,20 +14,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    if current_user && current_user.admin
-      post = Post.new(
-        title: params[:title],
-        body: params[:body],
-        image: params[:image],
-        user_id: current_user.id
-      )
-      if post.save
-        render json: post
-      else
-        render json: { errors: post.errors.full_messages }, status: :bad_request
-      end
+    post = Post.new(
+      title: params[:title],
+      body: params[:body],
+      image: params[:image],
+      user_id: current_user.id
+    )
+    if post.save
+      render json: post
     else
-      render json: { error: "Unauthorized - must be an admin" }, status: :unauthorized
+      render json: { errors: post.errors.full_messages }, status: :bad_request
     end
   end
 

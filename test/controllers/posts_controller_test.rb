@@ -27,7 +27,7 @@ test "index" do
   end
 
   test "update" do
-    post "/users.json", params: { name: "Test", email: "test@email.com", password: "password", password_confirmation: "password" }
+    post "/users.json", params: { name: "Test", email: "test@email.com", password: "password", password_confirmation: "password", admin: true }
     post "/sessions.json", params: { email: "test@email.com", password: "password" }
     post = Post.first
     patch "/posts/#{post.id}.json", params: { title: "Updated name" }
@@ -39,7 +39,7 @@ test "index" do
 
   test "destroy" do
     assert_difference "Post.count", -1 do
-      post "/users.json", params: { name: "Test", email: "test@email.com", password: "password", password_confirmation: "password" }
+      post "/users.json", params: { name: "Test", email: "test@email.com", password: "password", password_confirmation: "password", admin: true }
       post "/sessions.json", params: { email: "test@email.com", password: "password" }
       delete "/posts/#{Post.first.id}.json"
       assert_response 200
