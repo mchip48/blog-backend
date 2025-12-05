@@ -5,3 +5,15 @@
 # password123
 
 # user_id=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik5nPT0iLCJleHAiOm51bGwsInB1ciI6ImNvb2tpZS51c2VyX2lkIn19--f63a72b68ab85cc559e2a7a93ed3b7278fc68510; path=/; secure; httponly; samesite=none
+
+
+
+
+
+# non admin account
+
+# gordon@gmail.com
+
+# password123
+
+# user_id=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik5BPT0iLCJleHAiOm51bGwsInB1ciI6ImNvb2tpZS51c2VyX2lkIn19--61c1e646d00b1bdb9d2be1ef0860a803d5fabaae; path=/; secure; httponly; samesite=none

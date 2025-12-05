@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   # callback
   before_action :authenticate_user, except: [:index, :show]
-  before_action :authenticate_admin, only: [:update, :destroy]
+  before_action :authorize_post_owner, only: [:update, :destroy]
   #anyone can see the data - index and show
   #only logged in users can create data
-  #only admins can update or destroy
+  #only admins/posts owner can update or destroy
 
   # after_action is available too
   def index
