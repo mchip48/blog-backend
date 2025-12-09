@@ -26,6 +26,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       data = JSON.parse(response.body)
       assert_response 200
     end
+
+    # testing sad path - if someone isn't signed in
+    delete "/sessions.json"
+    post "/posts.json", params: { title: "testing", body: "test body", image: "test.jpg" }
+    assert_response 401
   end
 
   test "update" do
@@ -35,6 +40,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     data = JSON.parse(response.body)
     assert_equal "Updated name", data["title"]
+
+    # testing sad path - if someone isn't signed in
+    delete "/sessions.json"
+    patch "/posts/#{post.id}.json", params: { title: "testing patch" }
+    assert_response 401
   end
 
   test "destroy" do
@@ -42,5 +52,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete "/posts/#{Post.first.id}.json"
       assert_response 200
     end
+
+    # testing sad path - if someone isn't signed in
+    delete "/sessions.json"
+    delete "/posts/#{Post.first.id}.json"
+    assert_response 401
   end
 end
