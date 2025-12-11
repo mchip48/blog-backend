@@ -34,6 +34,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find_by(id: params[:id])
+    # binding.pry
     post.title = params[:title] || post.title
     post.body = params[:body] || post.body
     post.image = params[:image] || post.image
