@@ -1,3 +1,34 @@
+# # Clear existing data (optional - useful for resetting)
+# Post.destroy_all
+# User.destroy_all
+
+# # --- Users ---
+# puts "Creating users..."
+
+# admin = User.create!(
+#   name: "Admin User",
+#   email: "admin@test.com",
+#   password: "password",
+#   admin: true
+# )
+
+# user1 = User.create!(
+#   name: "Maria Santos",
+#   email: "maria@test.com",
+#   password: "password",
+#   admin: false
+# )
+
+# user2 = User.create!(
+#   name: "Tony Ramirez",
+#   email: "tony@test.com",
+#   password: "password",
+#   admin: false
+# )
+
+# puts "Users created!"
+
+
 Post.create!(title: "Innovative Synergy Solutions", body: "Our team is dedicated to providing groundbreaking solutions that redefine industry standards. With a focus on efficiency and innovation, we continuously push boundaries to deliver exceptional results.", image: "https://picsum.photos/640/480?random=1")
 Post.create!(title: "Revolutionizing Market Strategies", body: "By leveraging data-driven insights and cutting-edge technology, we help businesses navigate complex market landscapes with confidence and precision.", image: "https://picsum.photos/640/480?random=2")
 Post.create!(title: "Next-Gen Productivity Tools", body: "Our latest software suite empowers teams to collaborate seamlessly, enhancing productivity while streamlining workflows for maximum efficiency.", image: "https://picsum.photos/640/480?random=3")
