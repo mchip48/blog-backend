@@ -3,30 +3,30 @@
 # User.destroy_all
 
 # # --- Users ---
-# puts "Creating users..."
+puts "Creating users..."
 
-# admin = User.create!(
-#   name: "Admin User",
-#   email: "admin@test.com",
-#   password: "password",
-#   admin: true
-# )
+admin = User.create!(
+  name: "Admin User",
+  email: "admin@test.com",
+  password: "password",
+  admin: true
+)
 
-# user1 = User.create!(
-#   name: "Maria Santos",
-#   email: "maria@test.com",
-#   password: "password",
-#   admin: false
-# )
+user1 = User.create!(
+  name: "Maria Santos",
+  email: "maria@test.com",
+  password: "password",
+  admin: false
+)
 
-# user2 = User.create!(
-#   name: "Tony Ramirez",
-#   email: "tony@test.com",
-#   password: "password",
-#   admin: false
-# )
+user2 = User.create!(
+  name: "Tony Ramirez",
+  email: "tony@test.com",
+  password: "password",
+  admin: false
+)
 
-# puts "Users created!"
+puts "Users created!"
 
 
 Post.create!(title: "Innovative Synergy Solutions", body: "Our team is dedicated to providing groundbreaking solutions that redefine industry standards. With a focus on efficiency and innovation, we continuously push boundaries to deliver exceptional results.", image: "https://picsum.photos/640/480?random=1")
