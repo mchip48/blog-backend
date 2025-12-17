@@ -8,21 +8,21 @@ puts "Creating users..."
 admin = User.create!(
   name: "Admin User",
   email: "admin@test.com",
-  password: "password",
+  password_digest: "password1",
   admin: true
 )
 
 user1 = User.create!(
   name: "Maria Santos",
   email: "maria@test.com",
-  password: "password",
+  password_digest: "password2",
   admin: false
 )
 
 user2 = User.create!(
   name: "Tony Ramirez",
   email: "tony@test.com",
-  password: "password",
+  password_digest: "password3",
   admin: false
 )
 
