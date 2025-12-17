@@ -7,3 +7,5 @@ Post.create!(title: "Breakthroughs in Cloud Computing", body: "Our cloud solutio
 Post.create!(title: "Empowering Remote Workforces", body: "With the shift to remote work, our tools ensure seamless communication, project management, and team collaboration across the globe.", image: "https://picsum.photos/640/480?random=7")
 Post.create!(title: "Cybersecurity in the Modern Era", body: "Protecting sensitive data is our top priority. Our advanced security protocols safeguard businesses from cyber threats and ensure compliance with industry standards.", image: "https://picsum.photos/640/480?random=8")
 Post.create!(title: "Blockchain and the Future of Finance", body: "Decentralized finance is reshaping the financial world. Our expertise in blockchain technology helps businesses stay ahead in this rapidly evolving sector.", image: "https://picsum.photos/640/480?random=9")
+
+
