@@ -1,6 +1,6 @@
 # # Clear existing data (optional - useful for resetting)
-# Post.destroy_all
-# User.destroy_all
+Post.destroy_all
+User.destroy_all
 
 # # --- Users ---
 puts "Creating users..."
